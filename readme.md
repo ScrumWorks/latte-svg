@@ -59,6 +59,9 @@ extensions:
 latteSvg:
     baseDir: %wwwDir%
     wwwPathMask: 'images/svg/{group}/symbol-defs.svg'
+    defaultGroup: base
+    defaultIconClass: svg-icon
+    iconNamePrefix: icon
 ```
 
 # Caveats & Limitations

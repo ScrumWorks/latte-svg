@@ -11,8 +11,6 @@ use Milo;
 
 class SvgMacros extends MacroSet
 {
-    private const DEFAULT_GROUP = 'base';
-
     /** @var Milo\EmbeddedSvg\Macro */
     private $macro;
 
@@ -57,7 +55,7 @@ class SvgMacros extends MacroSet
 
         $group = str_replace(['"', '\''], '', $node->tokenizer->fetchWord());
         if ($group === false || $group === 'null') {
-            $group = self::DEFAULT_GROUP;
+            $group = $this->settings->defaultGroup;
         }
 
         $iconPath = DIRECTORY_SEPARATOR . $this->_getPath($group);
@@ -72,9 +70,9 @@ class SvgMacros extends MacroSet
         $iconUrl = $iconPath . '?v=' . $lastChange;
 
         return $writer->write('
-            echo "<svg class=\"svg-icon";
+            echo "<svg class=\"' . $this->settings->defaultIconClass . '";
             ' . ($classString !== null ? 'echo " "' . $classString : '') . ';
-            echo "\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . (' . self::_ieCheckCondition() . ' ? "" : "' . $iconUrl . '") . "#icon-' . $icon . '\"></use></svg>"'
+            echo "\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . (' . self::_ieCheckCondition() . ' ? "" : "' . $iconUrl . '") . "#' . ($this->settings->iconNamePrefix !== null ? $this->settings->iconNamePrefix . '-' : '') . $icon . '\"></use></svg>"'
         );
     }
 

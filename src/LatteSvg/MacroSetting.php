@@ -8,6 +8,15 @@ class MacroSetting extends \Milo\EmbeddedSvg\MacroSetting
 	/** @var string */
 	public $wwwPathMask;
 
+	/** @var string */
+	public $defaultGroup = 'base';
+
+	/** string */
+	public $defaultIconClass = 'icon';
+
+    /** string|null */
+    public $iconNamePrefix;
+
 	public static function createFromArray2(array $setting): self
 	{
 		$me = new self;
