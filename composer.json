@@ -1,0 +1,22 @@
+{
+	"name": "dada-amater/latte-svg",
+	"type": "library",
+	"description": "Latte macro to embed SVG from file into HTML",
+	"keywords": ["nette", "latte", "svg", "embedded", "macro"],
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "David Dvořák",
+			"email": "dvorak.dave@gmail.com",
+			"homepage": "https://github.com/dada-amater"
+		}
+	],
+	"require": {
+		"php": ">=7.1.0",
+		"latte/latte": "^2.4.0",
+		"milo/embedded-svg": "^1.0.0"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
