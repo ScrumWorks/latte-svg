@@ -53,9 +53,12 @@ class SvgMacros extends MacroSet
             $classString = '. %escape( "' . $class . '")';
         }
 
-        $group = str_replace(['"', '\''], '', $node->tokenizer->fetchWord());
+        $group = $node->tokenizer->fetchWord();
         if ($group === false || $group === 'null') {
             $group = $this->settings->defaultGroup;
+        }
+        else {
+            $group = str_replace(['"', '\''], '', $group);
         }
 
         $iconPath = DIRECTORY_SEPARATOR . $this->_getPath($group);
