@@ -14,9 +14,6 @@ class MacroSetting extends \Milo\EmbeddedSvg\MacroSetting
 	/** string */
 	public $defaultIconClass = 'icon';
 
-    /** string|null */
-    public $iconNamePrefix;
-
 	public static function createFromArray2(array $setting): self
 	{
 		$me = new self;
