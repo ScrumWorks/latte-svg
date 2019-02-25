@@ -46,7 +46,7 @@ class SvgMacros extends MacroSet
     {
         $icon = str_replace(['"', '\''], '', $node->tokenizer->fetchWord());
         $class = str_replace(['"', '\''], '', $node->tokenizer->fetchWord());
-        if ($class === false || $class === 'null') {
+        if ($class === false || $class === null) {
             $classString = null;
         }
         else {
@@ -54,7 +54,7 @@ class SvgMacros extends MacroSet
         }
 
         $group = $node->tokenizer->fetchWord();
-        if ($group === false || $group === 'null') {
+        if ($group === false || $group === null) {
             $group = $this->settings->defaultGroup;
         }
         else {

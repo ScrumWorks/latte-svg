@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php": ">=7.1.0",
-		"latte/latte": "^2.4.0",
+		"latte/latte": "^2.5.0",
 		"milo/embedded-svg": "^1.0.0"
 	},
 	"autoload": {
