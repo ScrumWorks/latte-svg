@@ -23,14 +23,14 @@ Result HTML code IN IE may look like:
 
 Result HTML code IN IE may look like:
 ```html
-<svg class="some-class">
+<svg class="some-class" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-bin"></use>
 </svg>
 ```
 
 Result in Chrome, FF, Opera may look like:
 ```html
-<svg class="some-class">
+<svg class="some-class" aria-hidden="true">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svg/icon-group/symbol-defs.svg?v=1531909866#icon-bin"></use>
 </svg>
 ```
