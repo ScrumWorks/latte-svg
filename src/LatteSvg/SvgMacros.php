@@ -75,7 +75,7 @@ class SvgMacros extends MacroSet
         return $writer->write('
             echo "<svg class=\"sprite-'. $group .' sprite-'. $group .'--' . $icon . ' ' . $this->settings->defaultIconClass . '";
             ' . ($classString !== null ? 'echo " "' . $classString : '') . ';
-            echo "\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . (' . self::_ieCheckCondition() . ' ? "" : "' . $iconUrl . '") . "#sprite-' . $group. '--' . $icon . '\"></use></svg>"'
+            echo "\" aria-hidden=\"true\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . (' . self::_ieCheckCondition() . ' ? "" : "' . $iconUrl . '") . "#sprite-' . $group. '--' . $icon . '\"></use></svg>"'
         );
     }
 
